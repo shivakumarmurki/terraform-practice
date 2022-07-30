@@ -47,7 +47,7 @@ pipeline {
         sh 'terraform destroy --auto-approve'
       }
     }
-    /*
+    /* 
     stage('Terraform Init and apply - Dev') {
       steps{
         sh returnStatus: true, script: 'terraform workspace new dev'
