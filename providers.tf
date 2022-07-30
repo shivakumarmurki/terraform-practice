@@ -3,6 +3,7 @@ provider "aws" {
     profile = "profile1"
 }
 
+/*
 terraform {
   backend "s3" {
     bucket = "siri.muriki"
@@ -11,3 +12,4 @@ terraform {
     encrypt = true
   }
 }
+*/

@@ -32,12 +32,15 @@ pipeline {
       }
     }
     stage("Terraform plan"){
-      sh 'terraform plan'
+      steps {
+        sh 'terraform plan'
+      }
     }
-        stage("Terraform apply"){
-      sh 'terraform apply'
+    stage("Terraform apply"){
+      steps {
+        sh 'terraform apply'
+      }
     }
-
     /*
     stage('Terraform Init and apply - Dev') {
       steps{
