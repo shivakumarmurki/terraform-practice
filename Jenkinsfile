@@ -7,7 +7,8 @@ pipeline {
   stages {
     stage('Terraform Init') {
       steps{
-        sh "terraform init"
+        sh "terraform init backend-config="access_key=AKIA262M72JNKLRTZMWE" -backend-config="secret_key=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" 
+-backend-config="region=ap-south-1"
       }
     }
   }
