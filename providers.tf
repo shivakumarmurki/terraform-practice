@@ -4,7 +4,7 @@ provider "aws" {
     secret_key = var.secret_key
 }
 
-/* 
+/*
 terraform {
   backend "s3" {
     bucket = "siri.muriki"
