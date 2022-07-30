@@ -1,6 +1,8 @@
 provider "aws" {
     region = "${var.region}"
-    profile = "${var.profile}" 
+    access_key = "AKIA262M72JNKLRTZMWE"
+    secret_key = "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"
+    
 }
 
 terraform {
@@ -8,6 +10,5 @@ terraform {
     bucket = "siri.muriki"
     key = "terraform/terraform.tfstate"
     region = "ap-south-1"
-    profile = "profile1"
   }
 }
