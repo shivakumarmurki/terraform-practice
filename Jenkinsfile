@@ -9,8 +9,8 @@ pipeline {
       steps{
         sh returnStatus: true, script: 'terraform workspace new dev'
         sh '''
-          terraform init -backend-config="access_key=AKIA262M72JNKLRTZMWE" -backend-config="secret_key=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"
-          terraform apply -backend-config="access_key=AKIA262M72JNKLRTZMWE" -backend-config="secret_key=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" -var-file=dev.tfvars -auto-approve 
+          terraform init
+          terraform apply -var-file=dev.tfvars -auto-approve 
         '''
       }
     }
@@ -18,8 +18,8 @@ pipeline {
       steps{
         sh returnStatus: true, script: 'terraform workspace new Prod'
         sh '''
-          terraform init -backend-config="access_key=AKIA262M72JNKLRTZMWE" -backend-config="secret_key=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"
-          terraform apply -backend-config="access_key=AKIA262M72JNKLRTZMWE" -backend-config="secret_key=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" -var-file=prod.tfvars -auto-approve
+          terraform init
+          terraform apply -var-file=prod.tfvars -auto-approve
         '''
       }
     }
