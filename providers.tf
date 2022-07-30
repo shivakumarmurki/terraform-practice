@@ -4,8 +4,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "javahome-tf-shiva"
-    key = "terraform.tfstate"
+    bucket = "siri.muriki"
+    key = "terraform/terraform.tfstate"
     region = "ap-south-1"
   }
 }
