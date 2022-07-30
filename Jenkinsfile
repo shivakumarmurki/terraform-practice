@@ -9,7 +9,7 @@ pipeline {
       steps{
         sh returnStatus: true, script: 'terraform workspace new dev'
         sh '''
-          terraform init
+          terraform init -migrate-state
           terraform apply -var-file=dev.tfvars -auto-approve 
         '''
       }
@@ -18,7 +18,7 @@ pipeline {
       steps{
         sh returnStatus: true, script: 'terraform workspace new Prod'
         sh '''
-          terraform init
+          terraform init -migrate-state
           terraform apply -var-file=prod.tfvars -auto-approve
         '''
       }
