@@ -16,7 +16,7 @@ pipeline {
         git branch: 'master', url: 'https://github.com/shivakumarmurki/terraform-practice'
       }
     }
-    /*
+    
     stage("Terraform init") {
       steps{
         sh 'terraform init'
@@ -42,7 +42,12 @@ pipeline {
         sh 'terraform apply --auto-approve'
       }
     }
-    */
+    stage("Terraform destroy"){
+      steps {
+        sh 'terraform destroy'
+      }
+    }
+    /*
     stage('Terraform Init and apply - Dev') {
       steps{
         sh returnStatus: true, script: 'terraform workspace new dev'
@@ -61,6 +66,7 @@ pipeline {
         '''
       }
     }
+    */
   }
 }
 
