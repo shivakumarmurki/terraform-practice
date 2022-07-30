@@ -7,5 +7,6 @@ terraform {
     bucket = "siri.muriki"
     key = "terraform/terraform.tfstate"
     region = "ap-south-1"
+    encrypt = true
   }
 }
