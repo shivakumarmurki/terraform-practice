@@ -2,7 +2,7 @@ provider "aws" {
     region = "${var.region}"
 }
 
-/*
+
 terraform {
   backend "s3" {
     bucket = "siri.muriki"
@@ -11,4 +11,3 @@ terraform {
     encrypt = true
   }
 }
-*/
