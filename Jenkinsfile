@@ -5,12 +5,40 @@ pipeline {
   }
 
   stages {
-    /*
     stage('Cleanup') {
       steps{
         deleteDir()
       }
-    }*/
+    }
+    stage("Checkout from GIT")
+    {
+      steps {
+        git branch: 'master', url: 'https://github.com/shivakumarmurki/terraform-practice'
+      }
+    }
+    stage("Terraform init") {
+      steps{
+        sh 'terraform init'
+      }
+    }
+    stage("Terraform fmt"){
+      steps{
+        sh 'terraform fmt'
+      }
+    }
+    stage("Terraform validate"){
+      steps{
+        sh 'terraform validate'
+      }
+    }
+    stage("Terraform plan"){
+      sh 'terraform plan'
+    }
+        stage("Terraform apply"){
+      sh 'terraform apply'
+    }
+
+    /*
     stage('Terraform Init and apply - Dev') {
       steps{
         sh returnStatus: true, script: 'terraform workspace new dev'
@@ -29,6 +57,7 @@ pipeline {
         '''
       }
     }
+    */
   }
 }
 
