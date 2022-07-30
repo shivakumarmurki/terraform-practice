@@ -7,6 +7,4 @@ variable "vpc_cidr" {
 variable "tenancy" {
   default = "default"
 }
-variable "profile" {
-  default = "profile1"
-}
+
