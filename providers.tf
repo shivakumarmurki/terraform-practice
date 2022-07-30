@@ -9,6 +9,6 @@ terraform {
   backend "s3" {
     bucket = "siri.muriki"
     key = "terraform/terraform.tfstate"
-    region = "${var.region}"
+    region = "ap-south-1"
   }
 }
