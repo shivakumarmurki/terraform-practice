@@ -6,7 +6,9 @@ pipeline {
 
   stages {
     stage('Cleanup') {
+      steps{
         deleteDir()
+      }
     }
     stage('Terraform Init and apply - Dev') {
       steps{
