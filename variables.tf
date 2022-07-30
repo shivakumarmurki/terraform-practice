@@ -7,4 +7,9 @@ variable "vpc_cidr" {
 variable "tenancy" {
   default = "default"
 }
-
+variable "access_key" {
+  default = "AKIA262M72JNCCQ7UEPK"
+}
+variable "secret_key" {
+  default = "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"
+}

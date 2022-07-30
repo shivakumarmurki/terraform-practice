@@ -38,7 +38,7 @@ pipeline {
     }
     stage("Terraform apply"){
       steps {
-        sh 'terraform apply'
+        sh 'terraform apply --auto-approve'
       }
     }
     /*
@@ -47,7 +47,7 @@ pipeline {
         sh returnStatus: true, script: 'terraform workspace new dev'
         sh '''
           terraform init
-          terraform apply -var-file=dev.tfvars -auto-approve 
+          terraform apply -var-file=dev.tfvars --auto-approve 
         '''
       }
     }
@@ -56,7 +56,7 @@ pipeline {
         sh returnStatus: true, script: 'terraform workspace new Prod'
         sh '''
           terraform init
-          terraform apply -var-file=prod.tfvars -auto-approve
+          terraform apply -var-file=prod.tfvars --auto-approve
         '''
       }
     }
